@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Live Stream & Sermons | Breakthrough Parish</title>
+    <meta
+      name="description"
+      content="Watch Breakthrough Parish live services and recent sermons online. Join us for worship, prayer, and teaching."
+    />
+    <meta
+      name="keywords"
+      content="Breakthrough Parish live, church live stream, sermons, Lagos church live"
+    />
+    <meta name="author" content="Breakthrough Parish" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Live Stream & Sermons | Breakthrough Parish"
+    />
+    <meta
+      property="og:description"
+      content="Join Breakthrough Parish online — watch live services and recent sermons."
+    />
+    <meta
+      property="og:image"
+      content="https://yourdomain.com/images/og-live.jpg"
+    />
+    <meta property="og:url" content="https://yourdomain.com/live-stream.html" />
+    <meta property="og:type" content="website" />
+
+    <style>
+      :root {
+        --accent: #4f46e5;
+        --muted: #6b7280;
+        --bg: #f8fafc;
+        font-family: Inter, system-ui, Arial, sans-serif;
+        color: #0f172a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+      }
+      .logo {
+        font-weight: 800;
+        color: var(--accent);
+      }
+      h1 {
+        margin: 6px 0;
+        font-size: 26px;
+      }
+      p.lead {
+        color: var(--muted);
+        margin: 6px 0 18px;
+      }
+
+      /* Live player */
+      .live-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+      }
+      .video-wrap {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+      .video-wrap iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* SERMON GRID */
+      .sermon-grid {
+        display: grid;
+        gap: 16px;
+        margin-top: 20px;
+      }
+      @media (min-width: 720px) {
+        .sermon-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .sermon-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 12px;
+        box-shadow: 0 6px 12px rgba(15, 23, 42, 0.06);
+      }
+      .sermon-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .sermon-card h3 {
+        font-size: 16px;
+        margin: 10px 0 6px;
+      }
+      .sermon-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* small helpers */
+      .btn {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      footer {
+        margin-top: 28px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+        padding: 18px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div>
+          <div class="logo">Breakthrough Parish</div>
+          <div style="font-size: 13px; color: var(--muted)">
+            Live Stream & Sermons
+          </div>
+        </div>
+        <nav>
+          <a
+            href="index.html"
+            class="btn"
+            style="
+              background: transparent;
+              color: var(--accent);
+              padding: 6px 10px;
+              border-radius: 8px;
+              text-decoration: none;
+            "
+            >← Back</a
+          >
+        </nav>
+      </header>
+
+      <main>
+        <section class="live-card fade">
+          <h1>Live Now</h1>
+          <p class="lead">
+            If we're streaming right now, the live player below will show the
+            broadcast. If not, you'll see the channel's latest video.
+          </p>
+
+          <div class="video-wrap" id="livePlayerWrapper">
+            <!--
+            DEFAULT: placeholder embed.
+            Replace CHANNEL_ID below with your YouTube channel ID when you have it.
+            Example: src="https://www.youtube.com/embed/live_stream?channel=UCxxxxxxxxxxxx"
+          -->
+            <iframe
+              id="liveIframe"
+              src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"
+              title="Breakthrough Parish Live Stream"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+
+          <p style="font-size: 13px; color: var(--muted)">
+            Tip: To use your own channel, replace <code>CHANNEL_ID</code> in the
+            iframe <code>src</code> with your YouTube channel ID. If you don't
+            have a channel yet, leave as-is and replace with a video embed link
+            like <code>https://www.youtube.com/embed/VIDEO_ID</code>.
+          </p>
+        </section>
+
+        <!-- Recent Sermons -->
+        <section style="margin-top: 22px">
+          <h2 style="margin: 8px 0">Recent Sermons</h2>
+          <p class="lead">
+            Watch recent messages from our pastors and speakers.
+          </p>
+
+          <div class="sermon-grid" id="sermonGrid">
+            <!-- Example cards: replace VIDEO_ID_x & thumbnail URLs with your own -->
+            <div class="sermon-card">
+              <a
+                href="https://www.youtube.com/watch?v=VIDEO_ID_1"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg"
+                  alt="Sermon 1"
+                />
+              </a>
+              <h3>Walking by Faith</h3>
+              <p>Pastor Adebayo • Oct 12, 2025</p>
+            </div>
+
+            <div class="sermon-card">
+              <a
+                href="https://www.youtube.com/watch?v=VIDEO_ID_2"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg"
+                  alt="Sermon 2"
+                />
+              </a>
+              <h3>The Power of Praise</h3>
+              <p>Sis. Bola • Oct 19, 2025</p>
+            </div>
+
+            <div class="sermon-card">
+              <a
+                href="https://www.youtube.com/watch?v=VIDEO_ID_3"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://img.youtube.com/vi/VIDEO_ID_3/maxresdefault.jpg"
+                  alt="Sermon 3"
+                />
+              </a>
+              <h3>Faith That Moves Mountains</h3>
+              <p>Guest Speaker • Sep 28, 2025</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        &copy; <span id="year">2025</span> Breakthrough Parish — Lagos, Nigeria
+      </footer>
+    </div>
+
+    <script>
+      // small helpers and instructions to the user
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // If user hasn't replaced CHANNEL_ID, show friendly fallback help in console
+      const iframe = document.getElementById("liveIframe");
+      const src = iframe.getAttribute("src") || "";
+      if (src.includes("CHANNEL_ID")) {
+        // Console reminder (safe for non-dev users; remove if you like)
+        console.info(
+          "Reminder: replace CHANNEL_ID in live iframe src with your YouTube channel ID, or use a specific video embed (https://www.youtube.com/embed/VIDEO_ID)."
+        );
+      }
+
+      // Helpful function: replace placeholders easily from browser console for quick testing:
+      // Example (open console and paste):
+      // document.getElementById('liveIframe').src='https://www.youtube.com/embed/VIDEO_ID';
+      // This lets you test with a specific video immediately.
+    </script>
+  </body>
+</html>
