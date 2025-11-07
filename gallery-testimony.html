@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Photo Gallery & Member Testimonies | Breakthrough Parish</title>
+
+    <!-- ✅ SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Explore the Breakthrough Parish gallery and read powerful testimonies of faith, healing, and transformation from our members."
+    />
+    <meta
+      name="keywords"
+      content="Breakthrough Parish, RCCG, Church Gallery, Testimonies, Faith, Healing, Miracles, Christian Community"
+    />
+    <meta name="author" content="Breakthrough Parish" />
+
+    <!-- ✅ Open Graph -->
+    <meta
+      property="og:title"
+      content="Photo Gallery & Testimonies | Breakthrough Parish"
+    />
+    <meta
+      property="og:description"
+      content="See photos and testimonies from Breakthrough Parish members who experienced God's wonders."
+    />
+    <meta
+      property="og:image"
+      content="https://yourdomain.com/images/gallery-cover.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://yourdomain.com/gallery-testimony.html"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Breakthrough Parish – Testimonies of Faith"
+    />
+    <meta
+      name="twitter:description"
+      content="Join us and experience the move of God at Breakthrough Parish. See inspiring photos and member testimonies."
+    />
+    <meta
+      name="twitter:image"
+      content="https://yourdomain.com/images/gallery-cover.jpg"
+    />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        background: #f9f9f9;
+        color: #222;
+      }
+
+      header {
+        background: #1a237e;
+        color: white;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p.subtitle {
+        font-size: 1.1rem;
+        opacity: 0.85;
+      }
+
+      /* Photo Gallery */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 40px 10%;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Testimonies */
+      .testimonies {
+        background: #fff;
+        padding: 60px 10%;
+        text-align: center;
+      }
+
+      .testimonies h2 {
+        font-size: 2rem;
+        color: #1a237e;
+        margin-bottom: 1.5rem;
+      }
+
+      .slider {
+        position: relative;
+        max-width: 800px;
+        margin: auto;
+        overflow: hidden;
+      }
+
+      .slide {
+        display: none;
+        padding: 20px;
+        background: #f0f2ff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .active {
+        display: block;
+      }
+
+      .slide p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .slide h4 {
+        margin-top: 15px;
+        color: #1a237e;
+        font-weight: 600;
+      }
+
+      /* Testimony Form */
+      .testimony-form {
+        padding: 60px 10%;
+        background: #e8eaf6;
+        text-align: center;
+      }
+
+      .testimony-form h2 {
+        color: #1a237e;
+        margin-bottom: 1rem;
+      }
+
+      form {
+        max-width: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      input,
+      textarea {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        font-family: inherit;
+      }
+
+      button {
+        background: #1a237e;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #303f9f;
+      }
+
+      footer {
+        background: #1a237e;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem;
+        }
+        .testimonies h2 {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Gallery & Testimonies</h1>
+      <p class="subtitle">Moments of Faith • Lives Transformed</p>
+    </header>
+
+    <!-- Photo Gallery -->
+    <section class="gallery">
+      <img src="./images/images.jpg" alt="Sunday Worship Service" />
+      <img src="./images/download (2).jpg" alt="Youth Praise Night" />
+      <img src="./images/download (3).jpg" alt="Community Outreach" />
+      <img src="./images/download (4).jpg" alt="Bible Study Session" />
+      <img src="./images/download (5).jpg" alt="Children’s Service" />
+      <img src="./images/download (6).jpg" alt="Prayer Meeting" />
+    </section>
+
+    <!-- Testimony Slider -->
+    <section class="testimonies">
+      <h2>Member Testimonies</h2>
+      <div class="slider">
+        <div class="slide active">
+          <p>
+            "I was healed after months of illness when Pastor prayed for me.
+            Glory to God for this breakthrough!"
+          </p>
+          <h4>– Sister Mary</h4>
+        </div>
+        <div class="slide">
+          <p>
+            "After joining Breakthrough Parish, my business began to grow in
+            ways I never imagined. God is faithful!"
+          </p>
+          <h4>– Brother John</h4>
+        </div>
+        <div class="slide">
+          <p>
+            "My family was restored and my marriage healed after attending our
+            monthly vigil. Thank you, Jesus!"
+          </p>
+          <h4>– Mrs. Grace</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Share Your Testimony -->
+    <section class="testimony-form">
+      <h2>Share Your Testimony</h2>
+      <form action="https://formsubmit.co/tobi77405@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Full Name" required />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email Address"
+          required
+        />
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Share your testimony here..."
+          required
+        ></textarea>
+        <button type="submit">Send Testimony</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Breakthrough Parish | All Rights Reserved</p>
+    </footer>
+
+    <script>
+      // ✅ Testimony Slider
+      let slides = document.querySelectorAll(".slide");
+      let index = 0;
+
+      function showNextSlide() {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+      }
+
+      setInterval(showNextSlide, 5000);
+    </script>
+  </body>
+</html>
