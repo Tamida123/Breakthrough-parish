@@ -49,25 +49,58 @@
       .wrap {
         max-width: 1100px;
         margin: 0 auto;
-        padding: 24px;
+        padding: 16px;
+      }
+      @media (min-width: 640px) {
+        .wrap {
+          padding: 24px;
+        }
       }
       header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 12px 0;
+        flex-wrap: wrap;
+        gap: 12px;
       }
       .logo {
         font-weight: 800;
+        font-size: 18px;
         color: var(--accent);
+      }
+      @media (min-width: 640px) {
+        .logo {
+          font-size: 20px;
+        }
       }
       h1 {
         margin: 6px 0;
-        font-size: 26px;
+        font-size: 22px;
+      }
+      @media (min-width: 640px) {
+        h1 {
+          font-size: 26px;
+        }
+      }
+      h2 {
+        font-size: 20px;
+        margin: 8px 0;
+      }
+      @media (min-width: 640px) {
+        h2 {
+          font-size: 24px;
+        }
       }
       p.lead {
         color: var(--muted);
         margin: 6px 0 18px;
+        font-size: 14px;
+      }
+      @media (min-width: 640px) {
+        p.lead {
+          font-size: 16px;
+        }
       }
 
       /* Live player */
@@ -97,10 +130,16 @@
       /* SERMON GRID */
       .sermon-grid {
         display: grid;
+        grid-template-columns: 1fr;
         gap: 16px;
         margin-top: 20px;
       }
-      @media (min-width: 720px) {
+      @media (min-width: 640px) {
+        .sermon-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
         .sermon-grid {
           grid-template-columns: repeat(3, 1fr);
         }
@@ -110,21 +149,48 @@
         border-radius: 10px;
         padding: 12px;
         box-shadow: 0 6px 12px rgba(15, 23, 42, 0.06);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .sermon-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(15, 23, 42, 0.1);
+      }
+      .sermon-card video {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
       }
       .sermon-card img {
         width: 100%;
-        height: 160px;
+        height: auto;
+        min-height: 140px;
         object-fit: cover;
         border-radius: 8px;
       }
+      @media (min-width: 640px) {
+        .sermon-card img {
+          height: 160px;
+        }
+      }
       .sermon-card h3 {
-        font-size: 16px;
+        font-size: 14px;
         margin: 10px 0 6px;
+      }
+      @media (min-width: 640px) {
+        .sermon-card h3 {
+          font-size: 16px;
+        }
       }
       .sermon-card p {
         margin: 0;
         color: var(--muted);
-        font-size: 14px;
+        font-size: 12px;
+      }
+      @media (min-width: 640px) {
+        .sermon-card p {
+          font-size: 14px;
+        }
       }
 
       /* small helpers */
@@ -136,13 +202,30 @@
         color: #fff;
         text-decoration: none;
         font-weight: 700;
+        font-size: 13px;
+        white-space: nowrap;
+        transition: background 0.2s;
+      }
+      .btn:hover {
+        opacity: 0.9;
+      }
+      @media (min-width: 640px) {
+        .btn {
+          padding: 10px 14px;
+          font-size: 14px;
+        }
       }
       footer {
         margin-top: 28px;
         text-align: center;
         color: var(--muted);
-        font-size: 14px;
+        font-size: 12px;
         padding: 18px 0;
+      }
+      @media (min-width: 640px) {
+        footer {
+          font-size: 14px;
+        }
       }
     </style>
   </head>
@@ -151,9 +234,7 @@
       <header>
         <div>
           <div class="logo">Breakthrough Parish</div>
-          <div style="font-size: 13px; color: var(--muted)">
-            Live Stream & Sermons
-          </div>
+          <div style="font-size: 13px; color: var(--muted)">Lagos, Nigeria</div>
         </div>
         <nav>
           <a
@@ -172,7 +253,7 @@
       </header>
 
       <main>
-        <section class="live-card fade">
+        <!-- <section class="live-card fade">
           <h1>Live Now</h1>
           <p class="lead">
             If we're streaming right now, the live player below will show the
@@ -180,11 +261,11 @@
           </p>
 
           <div class="video-wrap" id="livePlayerWrapper">
-            <!--
+            
             DEFAULT: placeholder embed.
             Replace CHANNEL_ID below with your YouTube channel ID when you have it.
             Example: src="https://www.youtube.com/embed/live_stream?channel=UCxxxxxxxxxxxx"
-          -->
+          
             <iframe
               id="liveIframe"
               src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"
@@ -201,48 +282,36 @@
             have a channel yet, leave as-is and replace with a video embed link
             like <code>https://www.youtube.com/embed/VIDEO_ID</code>.
           </p>
-        </section>
+        </section> -->
 
-        <!-- Recent Sermons -->
         <section style="margin-top: 22px">
-          <h2 style="margin: 8px 0">Recent Sermons</h2>
-          <p class="lead">
-            Watch recent messages from our pastors and speakers.
-          </p>
+          <h2 style="margin: 8px 0">video clips</h2>
+          <p class="lead">Here are some video clips from our service.</p>
 
           <div class="sermon-grid" id="sermonGrid">
-            <!-- Example cards: replace VIDEO_ID_x & thumbnail URLs with your own -->
             <div class="sermon-card">
-              <a
-                href="https://www.youtube.com/watch?v=VIDEO_ID_1"
-                target="_blank"
-                rel="noopener"
-              >
-                <img
-                  src="https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg"
-                  alt="Sermon 1"
+              <video controls autoplay loop muted poster="">
+                <source
+                  src="./images/WhatsApp Video 2025-11-09 at 10.07.18_44ab93f1.mp4"
+                  type="video/mp4"
                 />
-              </a>
-              <h3>Walking by Faith</h3>
-              <p>Pastor Adebayo • Oct 12, 2025</p>
+              </video>
+              <h3>When a guest minister came around</h3>
+              <p>Pastor Akerele • Nov 4, 2025</p>
             </div>
 
             <div class="sermon-card">
-              <a
-                href="https://www.youtube.com/watch?v=VIDEO_ID_2"
-                target="_blank"
-                rel="noopener"
-              >
-                <img
-                  src="https://img.youtube.com/vi/VIDEO_ID_2/maxresdefault.jpg"
-                  alt="Sermon 2"
+              <video controls autoplay loop muted poster="">
+                <source
+                  src="./images/WhatsApp Video 2025-11-27 at 22.29.20.mp4"
+                  type="video/mp4"
                 />
-              </a>
+              </video>
               <h3>The Power of Praise</h3>
               <p>Sis. Bola • Oct 19, 2025</p>
             </div>
 
-            <div class="sermon-card">
+            <!-- <div class="sermon-card">
               <a
                 href="https://www.youtube.com/watch?v=VIDEO_ID_3"
                 target="_blank"
@@ -255,7 +324,7 @@
               </a>
               <h3>Faith That Moves Mountains</h3>
               <p>Guest Speaker • Sep 28, 2025</p>
-            </div>
+            </div> -->
           </div>
         </section>
       </main>

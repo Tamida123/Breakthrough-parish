@@ -215,39 +215,74 @@
           font-size: 1.6rem;
         }
       }
+      /* small helpers */
+      .btn {
+        display: flex;
+        justify-content: flex-end;
+
+        padding: 8px 12px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+      }
     </style>
   </head>
 
   <body>
     <header>
+      <a
+        href="index.html"
+        class="btn"
+        style="
+          background: transparent;
+          color: var(--accent);
+          padding: 6px 10px;
+          border-radius: 8px;
+          text-decoration: none;
+        "
+        >← Back</a
+      >
       <h1>Testimonies</h1>
+
       <p class="subtitle">Moments of Faith • Lives Transformed</p>
     </header>
 
     <!-- Testimony Slider -->
     <section class="testimonies">
       <h2>Member Testimonies</h2>
+
       <div class="slider">
         <div class="slide active">
           <p>
-            "I was healed after months of illness when Pastor prayed for me.
-            Glory to God for this breakthrough!"
+            "I thank the lord for Healing my children of sickness and also for
+            providing for my family"
           </p>
-          <h4>– Sister Mercy</h4>
+          <h4>- Bro Tunde</h4>
         </div>
         <div class="slide">
           <p>
-            "After joining Breakthrough Parish, my business began to grow in
-            ways I never imagined. God is faithful!"
+            "I thank God for the success of my sister's wedding and also for the
+            support i got from the pastor and church members."
           </p>
-          <h4>– Brother Tunde</h4>
+          <h4>– Sister Biyi</h4>
+        </div>
+        <div class="slide">
+          <p>"I thank God for the gift of life and healing."</p>
+          <h4>– Pastor Adedeji</h4>
         </div>
         <div class="slide">
           <p>
-            "My family was restored and my marriage healed after attending our
-            monthly vigil. Thank you, Jesus!"
+            "My children were healed and God restored back my phone that was
+            lost. I thank God i did not experience any form of loss."
           </p>
           <h4>– Mrs Helen</h4>
+        </div>
+
+        <div class="slide">
+          <p>"I thank God for adding another year to my daughter life ."</p>
+          <h4>– Mum Sarah</h4>
         </div>
       </div>
     </section>
