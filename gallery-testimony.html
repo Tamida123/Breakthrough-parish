@@ -26,15 +26,12 @@
       property="og:description"
       content="See photos and testimonies from Breakthrough Parish members who experienced God's wonders."
     />
-    <meta
-      property="og:image"
-      content="https://yourdomain.com/images/gallery-cover.jpg"
-    />
-    <meta
-      property="og:url"
-      content="https://yourdomain.com/gallery-testimony.html"
-    />
+    <meta property="og:image" content="https://breakthroughparish.com.ng/images/og-live.svg" />
+    <meta property="og:url" content="https://breakthroughparish.com.ng/gallery-testimony.html" />
     <meta property="og:type" content="website" />
+
+    <link rel="canonical" href="https://breakthroughparish.com.ng/gallery-testimony.html" />
+    <meta name="robots" content="index, follow" />
 
     <!-- ✅ Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -46,13 +43,32 @@
       name="twitter:description"
       content="Join us and experience the move of God at Breakthrough Parish. See inspiring photos and member testimonies."
     />
-    <meta
-      name="twitter:image"
-      content="https://yourdomain.com/images/gallery-cover.jpg"
-    />
+    <meta name="twitter:image" content="https://breakthroughparish.com.ng/images/og-live.svg" />
 
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="style.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://breakthroughparish.com.ng",
+        "name": "Breakthrough Parish",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://breakthroughparish.com.ng/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <!-- Google Analytics (placeholder: replace G-XXXXXXXXXX with your GA4 ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <style>
       body {
@@ -309,8 +325,13 @@
     </section>
 
     <footer>
-      <p>&copy; 2025 Breakthrough Parish | All Rights Reserved</p>
+      <p>&copy; <span id="year">2025</span> Breakthrough Parish | All Rights Reserved —
+      <a href="/privacy.html" style="color:white; text-decoration:underline; margin-left:8px">Privacy</a>
+      <span style="margin:0 6px">|</span>
+      <a href="/terms.html" style="color:white; text-decoration:underline">Terms</a>
+      </p>
     </footer>
+    <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 
     <script>
       // ✅ Testimony Slider

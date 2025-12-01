@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <style>
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight:700; fill: #fff; font-size:56px }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; fill: rgba(255,255,255,0.9); font-size:20px }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)" rx="16"/>
+  <g transform="translate(60,120)">
+    <text class="title">Breakthrough Parish</text>
+    <text class="subtitle" y="64">Live Stream & Sermons • Lagos, Nigeria</text>
+  </g>
+</svg>

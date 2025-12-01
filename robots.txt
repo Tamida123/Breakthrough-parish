@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://breakthroughparish.com.ng/sitemap.xml
+# If you need to block any private folders, add Disallow lines below.
+# Disallow: /private/
